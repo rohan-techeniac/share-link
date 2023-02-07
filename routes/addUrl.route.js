@@ -1,4 +1,5 @@
 const express = require("express");
+const httpstatus = require("http-status")
 
 const UrlExpressRoute = express.Router();
 
@@ -9,7 +10,7 @@ UrlExpressRoute.route("/").post((req, res, next) => {
     if (error) {
       return next(error);
     } else {
-      return res.send("Success");
+      return res.send({"message":"Success"});
     }
   });
 });

@@ -34,7 +34,7 @@ app.use("/save-link", UrlRoute);
 app.use(function (err, req, res, next) {
   console.error(err.message);
   if (!err.statusCode) err.statusCode = httpstatus.INTERNAL_SERVER_ERROR;
-  res.status(err.statusCode).send(err.message);
+  res.status(err.statusCode).send({"message":err.message});
 });
 
 // Event Loop
